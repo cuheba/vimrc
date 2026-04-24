@@ -2,7 +2,8 @@
 My .vimrc config in single file
 
 ## Example 
-<img width="859" height="563" alt="image" src="https://github.com/user-attachments/assets/21f43342-9d98-4bf0-9872-eb79bd110033" />
+<img width="854" height="571" alt="image" src="https://github.com/user-attachments/assets/f370600b-2edd-4019-bba8-f8a4edc4d8c5" />
+
 
 ## Can be used in neovim
 To use that specific commands in nvim you need to create nvim/init.vim and paste code from .vimrc
@@ -25,8 +26,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 :PlugInstall
 ```
 
-If you did it right you should see smth like *this*:
-
-<img width="849" height="560" alt="image" src="https://github.com/user-attachments/assets/56ac4544-1617-4660-b7c3-e688b9734964" />
+### If you did it right you should see smth like ***this:***
+<img width="852" height="568" alt="image" src="https://github.com/user-attachments/assets/6c4a0ff5-7d60-4355-aa5f-0e8fd4c19020" />
 
 *For proper look of airline-vim you need to install any NerdFont*
