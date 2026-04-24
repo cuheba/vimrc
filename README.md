@@ -1,5 +1,5 @@
-# vimrc config
-My vimrc config with single _vimrc (or .vimrc) file
+# Vim config
+My .vimrc config in single file
 
 ## Example 
 <img width="859" height="563" alt="image" src="https://github.com/user-attachments/assets/21f43342-9d98-4bf0-9872-eb79bd110033" />
@@ -8,7 +8,7 @@ My vimrc config with single _vimrc (or .vimrc) file
 To use that specific commands in nvim you need to create nvim/init.vim and paste code from .vimrc
 
 Then you need to configure plug-vim in neovim:
-### powershell (for win)
+### Powershell (for win)
 ```powershell
 New-Item -Path "$env:LOCALAPPDATA\nvim-data\site\autoload" -ItemType Directory -Force
 
@@ -25,7 +25,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 :PlugInstall
 ```
 
-If you did it right you should see smth like this:
+If you did it right you should see smth like *this*:
+
 <img width="849" height="560" alt="image" src="https://github.com/user-attachments/assets/56ac4544-1617-4660-b7c3-e688b9734964" />
 
 *For proper look of airline-vim you need to install any NerdFont*
