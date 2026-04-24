@@ -10,18 +10,19 @@ set relativenumber
 set number
 set hlsearch
 set ruler
+set ttyfast
 set noerrorbells
 set background=dark
-set t_Co=256
-set termguicolors
+set updatetime=300
+set lazyredraw
 
 highlight Comment ctermfg=green
 
 call plug#begin()
   Plug '/junegunn/fzf.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'vim-airline/vim-airline'
   Plug '/morhetz/gruvbox'
   Plug 'scrooloose/nerdtree'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -29,11 +30,43 @@ call plug#begin()
 call plug#end()
 
 
-colorscheme badwolf
-let g:airline_powerline_fonts = 1
 
-" Start NERDTree and leave the cursor in it.
-autocmd VimEnter * NERDTree
+"====TERMINAL====
+autocmd VimEnter * below new | term
+autocmd VimEnter * resize 10
+autocmd VimEnter * wincmd k
+tnoremap <Esc> <C-\><C-n>
+
+
+"=====AIRLINE=====
+
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_theme = 'base16'
+let g:airline_inactive_collapse = 0
+
+"highlight StatusLineNC guifg=#303030 guibg=#303030 gui=NONE
+"highlight VertSplit guifg=#303030 guibg=#303030 gui=NONE
+
+
+"=====THEMES=====
+let g:badwolf_darkgutter = 1
+highlight Normal ctermbg=NONE
+colorscheme goodwolf
+
+
+
+"=====NERDTree=====
+
+
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
+
+
+"=====Coc-vim=====
 
 " Использовать <Tab> для выбора предложений в меню автодополнения
 inoremap <silent><expr> <TAB>
@@ -46,6 +79,7 @@ function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
 
 " Использовать <Enter> для подтверждения выбора
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
