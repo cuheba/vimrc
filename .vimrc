@@ -18,6 +18,7 @@ set lazyredraw
 
 highlight Comment ctermfg=green
 
+
 call plug#begin()
   Plug '/junegunn/fzf.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -28,6 +29,11 @@ call plug#begin()
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'sjl/badwolf'
 call plug#end()
+
+
+
+"====PROXY====
+"let g:copilot_proxy = 'http://...'
 
 
 
